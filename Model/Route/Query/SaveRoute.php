@@ -1,9 +1,10 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types = 1);
 
 namespace Firegento\CacheWarmup\Model\Route\Query;
 
 use Firegento\CacheWarmup\Api\Data\CacheRouteInterface;
-use Firegento\CacheWarmup\Api\Data\CacheRouteInterfaceFactory;
 use Magento\Framework\App\ResourceConnection;
 
 class SaveRoute
@@ -25,13 +26,12 @@ class SaveRoute
         $connection->insertOnDuplicate(
             'cache_routes',
             [
-                'route'         => $cacheRoute->getRoute(),
-                'cache_status'  => $cacheRoute->getCacheStatus() ? 1 : 0,
-                'popularity'    => $cacheRoute->getPopularity(),
-                'lifetime'      => $cacheRoute->getLifetime()
+                'route' => $cacheRoute->getRoute(),
+                'cache_status' => $cacheRoute->getCacheStatus() ? 1 : 0,
+                'popularity' => $cacheRoute->getPopularity(),
+                'lifetime' => $cacheRoute->getLifetime(),
             ],
             ['cache_status', 'popularity', 'lifetime']
         );
-
     }
 }

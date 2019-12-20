@@ -1,5 +1,6 @@
-<?php declare(strict_types=1);
+<?php
 
+declare(strict_types = 1);
 
 namespace Firegento\CacheWarmup\Model;
 
@@ -11,36 +12,37 @@ use Firegento\CacheWarmup\Model\Route\Query\SaveRoute;
 
 class CacheRouteRepository implements CacheRouteRepositoryInterface
 {
-
     /**
      * @var GetById
      */
     protected $getByIdQuery;
+
     /**
      * @var SaveRoute
      */
     protected $saveCommand;
+
     /**
      * @var GetByRoute
      */
     protected $getByRoute;
 
     public function __construct(
-        GetById    $getByIdQuery,
+        GetById $getByIdQuery,
         GetByRoute $getByRoute,
-        SaveRoute  $saveCommand
+        SaveRoute $saveCommand
     ) {
         $this->getByIdQuery = $getByIdQuery;
-        $this->getByRoute   = $getByRoute;
-        $this->saveCommand  = $saveCommand;
+        $this->getByRoute = $getByRoute;
+        $this->saveCommand = $saveCommand;
     }
 
-    public function getById(int $id):? CacheRouteInterface
+    public function getById(int $id): ?CacheRouteInterface
     {
         return $this->getByIdQuery->execute($id);
     }
 
-    public function getByRoute(string $route):? CacheRouteInterface
+    public function getByRoute(string $route): ?CacheRouteInterface
     {
         return $this->getByRoute->execute($route);
     }

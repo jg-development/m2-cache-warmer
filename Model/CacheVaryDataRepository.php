@@ -1,5 +1,6 @@
 <?php
-declare(strict_types=1);
+
+declare(strict_types = 1);
 
 namespace Firegento\CacheWarmup\Model;
 
@@ -13,6 +14,7 @@ class CacheVaryDataRepository implements CacheVaryDataRepositoryInterface
      * @var SaveVaryData
      */
     private $saveVaryData;
+
     /**
      * @var GetAllVaryData
      */

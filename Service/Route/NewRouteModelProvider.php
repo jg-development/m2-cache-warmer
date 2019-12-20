@@ -8,13 +8,11 @@
 
 namespace Firegento\CacheWarmup\Service\Route;
 
-
 use Firegento\CacheWarmup\Api\Data\CacheRouteInterface;
 use Firegento\CacheWarmup\Api\Data\CacheRouteInterfaceFactory;
 
 class NewRouteModelProvider
 {
-
     /**
      * @var CacheRouteInterfaceFactory
      */

@@ -1,5 +1,6 @@
 <?php
-declare(strict_types=1);
+
+declare(strict_types = 1);
 
 namespace Firegento\CacheWarmup\Model\VaryData\Applicator;
 
@@ -14,6 +15,7 @@ class CustomerGroupApplicator implements VaryDataApplicatorInterface
      * @var Session
      */
     private $customerSession;
+
     /**
      * @var CustomerFactory
      */

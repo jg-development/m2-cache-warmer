@@ -1,5 +1,6 @@
 <?php
-declare(strict_types=1);
+
+declare(strict_types = 1);
 /**
  * GetAllVaryData
  *
@@ -18,6 +19,7 @@ class GetAllVaryData
      * @var ResourceConnection
      */
     protected $resourceConnection;
+
     /**
      * @var SerializerInterface
      */
@@ -35,6 +37,7 @@ class GetAllVaryData
     public function execute(): array
     {
         $connection = $this->resourceConnection->getConnection();
+
         return $connection->select()
             ->from('cache_vary_data')
             ->query()

@@ -1,7 +1,8 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types = 1);
 
 namespace Firegento\CacheWarmup\Model;
-
 
 use Firegento\CacheWarmup\Api\Data\CacheRouteInterface;
 use Firegento\CacheWarmup\Api\Data\CacheTagInterface;
@@ -31,7 +32,7 @@ class RoutesTagsLinkManagement implements RoutesTagsLinkManagementInterface
      */
     public function linkRouteToTags(CacheRouteInterface $cacheRoute, array $tags): void
     {
-        array_walk($tags, function (&$value) {return $value->getId();});
+        array_walk($tags, function (&$value) {return $value->getId(); });
         $this->linkRouteToTags->execute($cacheRoute->getId(), $tags);
     }
 }

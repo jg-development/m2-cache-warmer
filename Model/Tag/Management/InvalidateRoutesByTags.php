@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types = 1);
 
 namespace Firegento\CacheWarmup\Model\Tag\Management;
 
@@ -26,10 +28,10 @@ class InvalidateRoutesByTags
 
         $routesSql = $connection
             ->select()
-            ->from(["crt" => 'cache_routes_tags'], ['id' => 'route_id'])
+            ->from(['crt' => 'cache_routes_tags'], ['id' => 'route_id'])
             ->joinLeft(
                 ['ct' => 'cache_tags'],
-                "crt.tag_id = ct.id",
+                'crt.tag_id = ct.id',
                 ['tag_id' => 'id']
             )->where('ct.tag in (?)', $tags)->__toString();
 

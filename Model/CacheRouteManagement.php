@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types = 1);
 
 namespace Firegento\CacheWarmup\Model;
 
@@ -12,6 +14,7 @@ class CacheRouteManagement implements CacheRouteManagementInterface
      * @var IncrementPopularityById
      */
     protected $incrementPopularityById;
+
     /**
      * @var IncrementPopularityByRoute
      */

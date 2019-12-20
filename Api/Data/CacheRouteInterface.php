@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types = 1);
 
 namespace Firegento\CacheWarmup\Api\Data;
 
@@ -7,10 +9,11 @@ interface CacheRouteInterface
     /**
      * @return int
      */
-    public function getId():? int;
+    public function getId(): ?int;
 
     /**
      * @param int $id
+     *
      * @return void
      */
     public function setId(int $id): void;
@@ -18,10 +21,11 @@ interface CacheRouteInterface
     /**
      * @return string
      */
-    public function getRoute():? string;
+    public function getRoute(): ?string;
 
     /**
      * @param string $route
+     *
      * @return void
      */
     public function setRoute(string $route): void;
@@ -29,21 +33,23 @@ interface CacheRouteInterface
     /**
      * @return bool
      */
-    public function getCacheStatus():? bool;
+    public function getCacheStatus(): ?bool;
 
     /**
      * @param int|bool $cacheStatus
+     *
      * @return void
      */
-    public function setCacheStatus($cacheStatus): void;
+    public function setCacheStatus(int $cacheStatus): void;
 
     /**
      * @return int
      */
-    public function getLifetime():? int;
+    public function getLifetime(): ?int;
 
     /**
      * @param int $lifetime
+     *
      * @return void
      */
     public function setLifetime(int $lifetime): void;
@@ -51,10 +57,11 @@ interface CacheRouteInterface
     /**
      * @return int
      */
-    public function getPopularity():? int;
+    public function getPopularity(): ?int;
 
     /**
      * @param int $popularity
+     *
      * @return void
      */
     public function setPopularity(int $popularity): void;

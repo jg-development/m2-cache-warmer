@@ -1,7 +1,8 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types = 1);
 
 namespace Firegento\CacheWarmup\Service\Tag;
-
 
 use Firegento\CacheWarmup\Api\Data\CacheTagInterface;
 use Firegento\CacheWarmup\Api\Data\CacheTagInterfaceFactory;

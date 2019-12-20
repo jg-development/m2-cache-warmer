@@ -1,12 +1,14 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types = 1);
 
 namespace Firegento\CacheWarmup\Model\Tag;
-
 
 use Firegento\CacheWarmup\Api\Data\CacheTagInterface;
 
 /**
  * Class CacheTag
+ *
  * @package Firegento\CacheWarmup\Model\Tag
  */
 class CacheTag implements CacheTagInterface
@@ -24,13 +26,14 @@ class CacheTag implements CacheTagInterface
     /**
      * @return int
      */
-    public function getId():? int
+    public function getId(): ?int
     {
         return $this->id;
     }
 
     /**
      * @param int $id
+     *
      * @return mixed
      */
     public function setId(int $id): void
@@ -41,13 +44,14 @@ class CacheTag implements CacheTagInterface
     /**
      * @return string
      */
-    public function getCacheTag():? string
+    public function getCacheTag(): ?string
     {
         return $this->cacheTag;
     }
 
     /**
      * @param string $cacheTag
+     *
      * @return mixed
      */
     public function setCacheTag(string $cacheTag): void

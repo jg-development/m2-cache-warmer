@@ -1,7 +1,8 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types = 1);
 
 namespace Firegento\CacheWarmup\Service\Tag;
-
 
 use Firegento\CacheWarmup\Api\CacheTagRepositoryInterface;
 use Firegento\CacheWarmup\Api\Data\CacheTagInterface;
@@ -12,6 +13,7 @@ class GetExistingOrNewTagModel
      * @var CacheTagRepositoryInterface
      */
     protected $cacheTagRepository;
+
     /**
      * @var NewTagModelProvider
      */
@@ -21,7 +23,7 @@ class GetExistingOrNewTagModel
         CacheTagRepositoryInterface $cacheTagRepository,
         NewTagModelProvider $newTagModelProvider
     ) {
-        $this->cacheTagRepository  = $cacheTagRepository;
+        $this->cacheTagRepository = $cacheTagRepository;
         $this->newTagModelProvider = $newTagModelProvider;
     }
 

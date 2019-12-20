@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types = 1);
 
 namespace Firegento\CacheWarmup\Model\Route;
 
@@ -6,6 +8,7 @@ use Firegento\CacheWarmup\Api\Data\CacheRouteInterface;
 
 /**
  * Class CacheRoute
+ *
  * @package Firegento\CacheWarmup\Model\Route
  */
 class CacheRoute implements CacheRouteInterface
@@ -38,13 +41,14 @@ class CacheRoute implements CacheRouteInterface
     /**
      * @return int
      */
-    public function getId():? int
+    public function getId(): ?int
     {
         return $this->id;
     }
 
     /**
      * @param int $id
+     *
      * @return void
      */
     public function setId(int $id): void
@@ -55,13 +59,14 @@ class CacheRoute implements CacheRouteInterface
     /**
      * @return string
      */
-    public function getRoute():? string
+    public function getRoute(): ?string
     {
         return $this->route;
     }
 
     /**
      * @param string $route
+     *
      * @return void
      */
     public function setRoute(string $route): void
@@ -72,16 +77,17 @@ class CacheRoute implements CacheRouteInterface
     /**
      * @return bool
      */
-    public function getCacheStatus():? bool
+    public function getCacheStatus(): ?bool
     {
         return $this->cacheStatus;
     }
 
     /**
      * @param int|bool $cacheStatus
+     *
      * @return void
      */
-    public function setCacheStatus($cacheStatus): void
+    public function setCacheStatus(int $cacheStatus): void
     {
         $this->cacheStatus = $cacheStatus;
     }
@@ -89,13 +95,14 @@ class CacheRoute implements CacheRouteInterface
     /**
      * @return int
      */
-    public function getLifetime():? int
+    public function getLifetime(): ?int
     {
         return $this->lifetime;
     }
 
     /**
      * @param int $lifetime
+     *
      * @return void
      */
     public function setLifetime(int $lifetime): void
@@ -106,13 +113,14 @@ class CacheRoute implements CacheRouteInterface
     /**
      * @return int
      */
-    public function getPopularity():? int
+    public function getPopularity(): ?int
     {
         return $this->popularity;
     }
 
     /**
      * @param int $popularity
+     *
      * @return void
      */
     public function setPopularity(int $popularity): void

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types = 1);
 
 namespace Firegento\CacheWarmup\Model\RoutesTagsLink\Management;
 
@@ -19,8 +21,9 @@ class LinkRouteToTags
     }
 
     /**
-     * @param int $routeId
+     * @param int   $routeId
      * @param int[] $tagIds
+     *
      * @throws \Zend_Db_Exception
      */
     public function execute(int $routeId, array $tagIds): void
@@ -28,8 +31,8 @@ class LinkRouteToTags
         $routeToTags = [];
         array_walk($tagIds, function ($tagId) use ($routeId, $routeToTags) {
             $routeToTags[] = [
-                'tag_id'   => $tagId,
-                'route_id' => $routeId
+                'tag_id' => $tagId,
+                'route_id' => $routeId,
             ];
         });
 

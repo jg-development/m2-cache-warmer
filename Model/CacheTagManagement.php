@@ -1,7 +1,8 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types = 1);
 
 namespace Firegento\CacheWarmup\Model;
-
 
 use Firegento\CacheWarmup\Api\CacheTagManagementInterface;
 use Firegento\CacheWarmup\Model\Tag\Management\InvalidateRoutesByTags;

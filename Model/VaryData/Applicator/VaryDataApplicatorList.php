@@ -1,5 +1,6 @@
 <?php
-declare(strict_types=1);
+
+declare(strict_types = 1);
 
 namespace Firegento\CacheWarmup\Model\VaryData\Applicator;
 
@@ -12,6 +13,7 @@ class VaryDataApplicatorList
 
     /**
      * VaryDataApplicatorList constructor.
+     *
      * @param VaryDataApplicatorInterface[] $varyDataApplicators
      */
     public function __construct(array $varyDataApplicators = [])

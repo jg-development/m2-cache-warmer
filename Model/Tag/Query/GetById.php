@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types = 1);
 
 namespace Firegento\CacheWarmup\Model\Tag\Query;
 
@@ -13,6 +15,7 @@ class GetById
      * @var ResourceConnection
      */
     protected $resourceConnection;
+
     /**
      * @var CacheTagInterfaceFactory
      */
@@ -26,7 +29,7 @@ class GetById
         $this->cacheTagFactory = $cacheTagFactory;
     }
 
-    public function execute(int $id):? CacheTagInterface
+    public function execute(int $id): ?CacheTagInterface
     {
         $connection = $this->resourceConnection->getConnection();
 
@@ -43,8 +46,8 @@ class GetById
             $cacheRoute = $this->cacheTagFactory->create();
 
             array_walk($dbRoute, function ($value, $key) use ($cacheRoute) {
-                $camelCaseKey = "set" . SimpleDataObjectConverter::snakeCaseToUpperCamelCase($key);
-                $cacheRoute->$camelCaseKey($value);
+                $camelCaseKey = 'set' . SimpleDataObjectConverter::snakeCaseToUpperCamelCase($key);
+                $cacheRoute->{$camelCaseKey}($value);
             });
         }
 

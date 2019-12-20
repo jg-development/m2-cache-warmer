@@ -1,5 +1,6 @@
 <?php
-declare(strict_types=1);
+
+declare(strict_types = 1);
 /**
  * SaveVaryData
  *
@@ -18,6 +19,7 @@ class SaveVaryData
      * @var Context
      */
     private $httpContext;
+
     /**
      * @var CacheVaryDataRepositoryInterface
      */
@@ -33,14 +35,16 @@ class SaveVaryData
      * Adds a theme key to identifier for a built-in cache if user-agent theme rule is actual
      *
      * @param \Magento\Framework\App\PageCache\Identifier $identifier
-     * @param string $result
+     * @param string                                      $result
+     *
      * @return string
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
-    public function afterGetValue(\Magento\Framework\App\PageCache\Identifier $identifier, $result): string
+    public function afterGetValue(\Magento\Framework\App\PageCache\Identifier $identifier, string $result): string
     {
         $varyData = $this->httpContext->toArray()['data'];
         $this->varyDataRepository->save($varyData);
+
         return $result;
     }
 }

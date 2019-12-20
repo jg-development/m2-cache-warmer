@@ -10,6 +10,7 @@ class InstallSchema implements InstallSchemaInterface
 {
     /**
      * {@inheritdoc}
+     *
      * @throws \Zend_Db_Exception
      */
     public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
@@ -25,8 +26,10 @@ class InstallSchema implements InstallSchemaInterface
 
     /**
      * @param SchemaSetupInterface $setup
-     * @return \Magento\Framework\DB\Ddl\Table
+     *
      * @throws \Zend_Db_Exception
+     *
+     * @return \Magento\Framework\DB\Ddl\Table
      */
     private function getCacheTagTableDefinition(SchemaSetupInterface $setup): \Magento\Framework\DB\Ddl\Table
     {
@@ -55,8 +58,10 @@ class InstallSchema implements InstallSchemaInterface
 
     /**
      * @param SchemaSetupInterface $setup
-     * @return \Magento\Framework\DB\Ddl\Table
+     *
      * @throws \Zend_Db_Exception
+     *
+     * @return \Magento\Framework\DB\Ddl\Table
      */
     private function getVaryDataTableDefinition(SchemaSetupInterface $setup): \Magento\Framework\DB\Ddl\Table
     {
@@ -67,7 +72,7 @@ class InstallSchema implements InstallSchemaInterface
                 255,
                 [
                     'nullable' => false,
-                    'primary' => true
+                    'primary' => true,
                 ],
                 'Cache Vary Data'
             )
@@ -85,8 +90,10 @@ class InstallSchema implements InstallSchemaInterface
 
     /**
      * @param SchemaSetupInterface $setup
-     * @return \Magento\Framework\DB\Ddl\Table
+     *
      * @throws \Zend_Db_Exception
+     *
+     * @return \Magento\Framework\DB\Ddl\Table
      */
     private function getCacheRouteTableDefinition(SchemaSetupInterface $setup): \Magento\Framework\DB\Ddl\Table
     {
@@ -145,8 +152,10 @@ class InstallSchema implements InstallSchemaInterface
 
     /**
      * @param SchemaSetupInterface $setup
-     * @return \Magento\Framework\DB\Ddl\Table
+     *
      * @throws \Zend_Db_Exception
+     *
+     * @return \Magento\Framework\DB\Ddl\Table
      */
     private function getCacheRouteTagTableDefinition(SchemaSetupInterface $setup): \Magento\Framework\DB\Ddl\Table
     {
@@ -173,7 +182,7 @@ class InstallSchema implements InstallSchemaInterface
      */
     private function addCacheRouteTagForeignKeys(SchemaSetupInterface $setup): void
     {
-        /**
+        /*
          * Add foreign keys again
          */
         $setup->getConnection()->addForeignKey(

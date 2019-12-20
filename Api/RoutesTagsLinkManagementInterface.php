@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types = 1);
 
 namespace Firegento\CacheWarmup\Api;
 
@@ -12,5 +14,4 @@ interface RoutesTagsLinkManagementInterface
      * @param CacheTagInterface[] $tags
      */
     public function linkRouteToTags(CacheRouteInterface $cacheRoute, array $tags): void;
-
 }
