@@ -32,6 +32,8 @@ class CacheWarmup extends Command
 
     protected $stopAfter = 0;
 
+    protected $userAgent = 'Firegento/CacheWarmup/0.1.2';
+
     /**
      * @var UrlInterface
      */
@@ -89,6 +91,12 @@ class CacheWarmup extends Command
                 's',
                 InputArgument::OPTIONAL
             )
+            ->addOption(
+                'userAgent',
+                'u',
+                InputArgument::OPTIONAL,
+                'Name of User-Agent will be send inside request headers'
+            )
             ->setDescription('Fire curl requests to warm up varnish cache');
 
         parent::configure();
@@ -138,6 +146,13 @@ class CacheWarmup extends Command
         if (intval($stopAfter) > 0) {
             $this->stopAfter = $stopAfter;
         }
+
+        $userAgent = $input->getOption('userAgent') ?: '';
+        if (strlen($userAgent) > 0) {
+            $this->userAgent = $userAgent;
+        } else {
+            $this->userAgent = $this->userAgent . ' php/' . phpversion();
+        }
     }
 
     /**
@@ -186,6 +201,9 @@ class CacheWarmup extends Command
         $baseUrl = $this->urlInterface->getBaseUrl();
 
         return new Client([
+            'headers' => [
+                'User-Agent' => $this->userAgent
+            ],
             RequestOptions::ALLOW_REDIRECTS => true,
             'base_uri' => $baseUrl,
         ]);
